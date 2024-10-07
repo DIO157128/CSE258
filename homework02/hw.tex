@@ -1,0 +1,25 @@
+\begin{flushleft}
+    To solve this, we will use the concept of \textbf{inversions}. An \textbf{inversion} in a grid occurs when a higher numbered tile precedes a lower numbered tile in the reading order (from left to right, top to bottom) ignoring the empty space.
+
+\textbf{Counting Inversions:}\\
+    We first count the number of inversions in both the initial and final configurations.
+    \begin{enumerate}
+        \item Initial configuration:  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+        \item Final configuration: 2, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+    \end{enumerate}
+
+    The first sequence is already sorted, so there are no inversions. Thus, the number of inversions in the initial configuration is 0. In the second sequence tile 2 precedes tile 1, which creates one inversion. Thus, the number of inversions in the final configuration is 1.
+
+\textbf{Parity of Inversion:}\\
+    A fundamental property of the 15-puzzle is that the parity (evenness or oddness) of the number of inversions must be preserved after each valid move.
+
+    In the initial configuration, we have 0 inversions (even parity). In the final configuration, we have 1 inversion (odd parity).
+
+    Since the number of inversions changes from even to odd, it is impossible to reach the second configuration from the first configuration through valid moves, as the parity of the number of inversions must remain consistent.
+
+\textbf{Position of the Empty Cell:}\\
+    Additionally, we observe that the empty cell (denoted as 0) remains in the same position in both configurations (bottom-right corner). Since the empty cell does not change rows or columns, the relative number of inversions must remain unchanged if a solution were possible. However, the inversion count changes from 0 to 1, which is not allowed.
+
+\textbf{Conclusion:}\\
+    Since the parity of the number of inversions is different in the two configurations, it is impossible to reach the second configuration from the first. Therefore, we have proved that the second configuration cannot be reached from the first configuration.
+\end{flushleft}
